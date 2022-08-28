@@ -11,7 +11,9 @@ app.use(express.urlencoded({ extended: true }))
 app.use(cookieParser())
 
 const userRouter = require('./routes/userRoute')
+const postRouter = require('./routes/postsRoute')
 app.use('/api', userRouter)
+app.use('/api', postRouter)
 
 app.get('/', (req, res) => {
     res.send("Hi From Titan")
